@@ -1,6 +1,7 @@
 target/
 
 # The following files are generated/updated by Hilla
+.idea
 node_modules/
 frontend/generated/
 vite.generated.ts

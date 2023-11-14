@@ -20,6 +20,12 @@ export default function MainLayout() {
             <NavLink className={navLinkClasses} to="/">
               Hello World
             </NavLink>
+            <NavLink className={navLinkClasses} to="/helloflow">
+              Hello Flow
+            </NavLink>
+            <NavLink className={navLinkClasses} to="/anotherflow">
+              Another Flow
+            </NavLink>
             <NavLink className={navLinkClasses} to="/about">
               About
             </NavLink>
