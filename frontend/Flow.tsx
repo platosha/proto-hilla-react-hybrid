@@ -1,9 +1,6 @@
 import {Flow as _Flow} from "Frontend/generated/jar-resources/Flow.js";
-import {
-    lazy,
-    useCallback, useEffect, useRef,
-} from "react";
-import {useLocation, useMatches, useNavigate} from "react-router-dom";
+import {useEffect, useRef,} from "react";
+import {useLocation, useNavigate} from "react-router-dom";
 
 const flow = new _Flow({
     imports: () => import("Frontend/generated/flow/generated-flow-imports.js")
@@ -30,22 +27,20 @@ export default function Flow() {
             mountedContainer = container;
             if (container.onBeforeEnter) {
                 container.onBeforeEnter(
-                    {pathname, search}, {
-                        prevent() {
-
-                        },
+                    {pathname, search},
+                    {
+                        prevent() {},
                         redirect: navigate
-                    }, router
+                    },
+                    router,
                 );
             }
         });
         return () => {
             if (mountedContainer?.onBeforeLeave) {
                 mountedContainer?.onBeforeLeave({pathname, search}, {
-                    prevent() {
-
-                    }
-                }, router)
+                    prevent() {},
+                }, router);
             }
             mountedContainer?.parentNode?.removeChild(mountedContainer);
             mountedContainer = undefined;
