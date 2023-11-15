@@ -48,3 +48,7 @@ export default function Flow() {
     }, [pathname, search, hash]);
     return <output ref={ref} />;
 }
+
+export const serverSideRoutes = [
+    { path: '/*', element: <Flow/>, handle: { title: 'Flow...' } },
+];
